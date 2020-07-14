@@ -5,33 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calculator</title>
-    <link ref="stylesheet" type="text/css" href="style.css"
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
-        <form class="calulator" name ="culcu">
-            <input class="value" type="text" name ="display" readonly "">
-            <span class="numbers" onclick="document.calcu.text.value +=''">c</span>
-            <span class="numbers" onclick="document.calcu.text.value +='/'">/</span>
-            <span class="numbers" onclick="document.calcu.text.value +='*'">*</span>
-            <span class="numbers" onclick="document.calcu.text.value +='7'">7</span>
-            <span class="numbers" onclick="document.calcu.text.value +='8'">8</span>
-            <span class="numbers" onclick="document.calcu.text.value +='9'">9</span>
-            <span class="numbers" onclick="document.calcu.text.value +='-'">-</span>
-            <span class="numbers" onclick="document.calcu.text.value +='4'">4</span>
-            <span class="numbers" onclick="document.calcu.text.value +='5'">5</span>
-            <span class="numbers" onclick="document.calcu.text.value +='6'">6</span>
-            <span class="numbers" onclick="document.calcu.text.value +='+'">+</span>
-            <span class="numbers" onclick="document.calcu.text.value +='3'">3</span>
-            <span class="numbers" onclick="document.calcu.text.value +='2'">2</span>
-            <span class="numbers" onclick="document.calcu.text.value +='1'">1</span>
-            <span class="numbers" onclick="document.calcu.text.value +='00'">00</span>                                              
-            <span class="numbers" onclick="document.calcu.text.value +='.'">.</span>
-            <span class="numbers" onclick="document.calcu.text.value +='='">=</span>
-            
-                                                          
+    <div class="calculator-grid">
+        <div class="output">
+            <div class="prevous-operand"></div>
+            <div class="current-operand"></div>
+        </div>
+        <button class="span-two">AC</button>
+        <button class="span-two">DEL</button>
+        <button class="span-two">/</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>*</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>+</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>-</button>
+        <button>0</button>
+        <button>0</button>
+        <button Class="span-two">=</button>
 
-            
-        </form>
+
     </div>
 </body>
 </html>

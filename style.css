@@ -1,15 +1,16 @@
-*
-{
+*, *::before, *::after {
+    boxing-sizing: border-box;
+    font-weight: normal;
+}
+body {
+    paddding: 0px;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+    background-color: #7fdbda; 
 
 }
-body{
-    display: flex;
-    justify-content: center;
+.calculator-grid{
+    display: grid;
+    grid-template-colomn: auto auto auto;
+    align-items: center;
     min-height: 100vh;
-    background: #7fdbda;
 }
-
