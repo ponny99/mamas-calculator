@@ -1,67 +1,58 @@
-*{
+*, *::before, *::after {  
     margin: 0;
     padding: 0;
     outline: none;
     box-sizing: border-box; 
 }
 body{
-    display: flex;
+     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(#be8abf ,#fe91ca); 
+    min-height: 100vh; 
+    background: linear-gradient(#3e206d ,#fe91ca); 
     background-color: #be8abf;
 }
 .calculator-grid{
-width: 350px;
-background: #45046a;
-border-radius: 20px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4 ,100px);
+    grid-template-rows: minmax(120px , auto)repeat(5, 100px);
+
 }
-input[type="text"]{
-    height: 60px;
-    width: 300px;
-    margin-top: 40px;
-    border-radius: 1px;
-    border: 1px solid #fe91ca;
+.calculator-grid > button{
+    cursor: pointer;
+    border: 1px solid #45046a;
     color: black;
-    font-size: 22px;
+    font-size: 2rem;
     font-weight: bold;
-    text-align: right;
-    padding: 20px;
-    background: linear-gradient(#f0ece3,#ffe0f7) 
+    outline: none;
+     background-color:  #fe91ca; 
 }
-form .buttons{
-    width: 300px; 
-    margin: 10px 25px 0 25px;
-    padding: 10px 0; 
-
+.calculator-grid > button:hover{
+    background-color: rgba(255, 255 ,255 , 90);
 }
-input[type="button"]{
-    width: 58px;
-    height: 55px;
-    margin: 5px;
-    font-size: 30px;
-    line-height: 55px;
-    border-radius: 3px;
-    border: 1px solid #3e206d;
-    background: linear-gradient(#f0ece3,#fe91ca);
-} 
-input[type="button"]:hover{
-    transition: .5s;
-    background: linear-gradient(#45046a,#3e206d);
-
+.span-two{
+    grid-column: span 2;
 }
-input#clear{
-    background: #fa26a0;
-    border: 1px solid #be8abf;
-    color: black;
+.output {
+    grid-column: 1 / -1;
+    background-color: #ffe0f7;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all; 
 }
-input#equal{
-    width: 275px;
-    margin: 10px 0 10px 0;
-    font-size: 40px;
-    color: black;
-    background: #fa26a0;
-    border: 1px solid #be8abf;
+.output .previous-operand {
+    color: #3e206d;
+    font-size: 1.5em;
+}
+.output .current-operand {
+    color: #45046a;
+    font-size: 2.5em;
 }
