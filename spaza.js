@@ -26,6 +26,7 @@ class calculator {
      this.previousOperand = this.currentOperand
      this.currentOperand =''
     }
+    getDisplayNumber(number)
     compute(){
     let compuation
     const prev = parseFloat(this.previousOperand)
@@ -53,8 +54,10 @@ class calculator {
     }
     updateDisplay(){
     this.currentOperandTextElement.innerText = this.currentOperand
-    this.previousOperandTextElement.innerText = this.previousOperand
-    
+   if (this.operation != null) {
+      this.previousOperandTextElement.innerText =
+      `&{this.previousOperand}&{this.operation}`
+      }
     }
 }
 
@@ -92,5 +95,9 @@ equalsButton.addEventListener('click', button =>{
 
 allClearButton.addEventListener('click', button =>{
     calculator.clear()
+    calculator.updateDisplay()
+})
+deleteButton.addEventListener('click', button =>{
+    calculator.delete()
     calculator.updateDisplay()
 })
