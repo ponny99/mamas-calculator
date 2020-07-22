@@ -11,23 +11,45 @@ class calculator {
 
     }
     delete(){
-
+     this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
     appendNumber(number){
     if (number === '.' && this.currentOperand.includes('.')) return    
-    this.currentOperand = this.currentOperand.toString() + number.tostring
+    this.currentOperand = this.currentOperand.toString() + number.tostring()
     }
     chooseOperation(operation){
+     if (this.currentOperand === '') return
+     if (this.previousOperand !== ''){
+         this.compute()
+     }      
      this.operation = operation
      this.previousOperand = this.currentOperand
      this.currentOperand =''
     }
     compute(){
-    let computer
-    const prev = parseFalse(this.previousOperand)
-    const current = parseFalse(this.currentOperand)
-    if (isNaN(FloatNumber)) return ''
-     return floatNumber.toLocalString('en')
+    let compuation
+    const prev = parseFloat(this.previousOperand)
+    const current = parseFloat(this.currentOperand)
+    if (isNaN(prev) || isNaN(current)) return 
+     switch (this.operation){
+         case '+':
+         compuation = prev + current
+         break
+      case '-':
+         compuation = prev - current
+         break
+      case '*':
+         compuation = prev * current
+         break
+      case '/':
+         compuation = prev / current
+         break
+         default:
+         return
+        }
+        this.currentOperand = compuation
+        this.operation = undefined
+        this.previousOperand = ''
     }
     updateDisplay(){
     this.currentOperandTextElement.innerText = this.currentOperand
@@ -46,7 +68,7 @@ const allClearButtons = document.querySelector('[data-nallClear]')
 const dataPreviousOperandTextElement = document.querySelector('[data-previous-operand]')
 const dataCurrentOperandTextElement = document.querySelector('[data-current-operand]')
 
-const calculator =  new calculator (currentOperandTextElement ,previousOperandTextElement  )
+const calculator =  new calculator (currentOperandTextElement ,previousOperandTextElement)
 
 numberButtons.forEach(Button => {
     button.addEvenListener('click', () => {
@@ -61,4 +83,14 @@ operationButtons.forEach(Button => {
      calculator.updateDisplay()   
     })
     
+})
+
+equalsButton.addEventListener('click', button =>{
+    calculator.compute()
+    calculator.updateDisplay()
+})
+
+allClearButton.addEventListener('click', button =>{
+    calculator.clear()
+    calculator.updateDisplay()
 })
