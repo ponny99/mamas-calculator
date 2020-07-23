@@ -1,58 +1,100 @@
-*, *::before, *::after {  
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box; 
+body
+{
+background-color: #ffe0f7;
+} 
+.box
+{
+background-color:#e36387;
+height:400px;
+width:310px;
+border-radius:20px;
+position:relative;
+top:80px;
+left:40%;
+} 
+.display
+{
+ background-color:#222;
+width:270px;
+position:relative;
+left:15px;
+top:15px;
+height:40px;
+} 
+.display input
+{
+position:relative;
+left:2px;
+top:2px;
+height:35px;
+color:black; 
+background-color:#85a392;
+font-size:23px;
+text-align:right;
+} 
+.keys
+{
+position:relative;
+top:15px;
 }
-body{
-     display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    background: linear-gradient(#3e206d ,#fe91ca); 
-    background-color: #be8abf;
+.button
+{
+width:50px;
+height:50px;
+border:none;
+border-radius:8px;
+margin-left:17px;
+cursor:pointer;
+border-top:2px solid transparent;
 }
-.calculator-grid{
-    display: grid;
-    align-content: center;
-    justify-content: center;
-    min-height: 100vh;
-    grid-template-columns: repeat(4 ,100px);
-    grid-template-rows: minmax(120px , auto)repeat(5, 100px);
-
+.button.gray
+{
+color: #6a197d ;
+background-color: #c70039;
+border-bottom:black 2px solid;
+border-top:2px #6f6f6f solid;
 }
-.calculator-grid > button{
-    cursor: pointer;
-    border: 1px solid #45046a;
-    color: black;
-    font-size: 2rem;
-    font-weight: bold;
-    outline: none;
-     background-color:  #fe91ca; 
+.button.pink
+{
+color:black;
+background-color:#c70039;
+border-bottom:black 2px solid;
 }
-.calculator-grid > button:hover{
-    background-color: rgba(255, 255 ,255 , 90);
+.button.black
+{
+color:black;
+background-color:303030;
+border-bottom:black 2px solid;
+border-top:2px 303030 solid;
 }
-.span-two{
-    grid-column: span 2;
+.button.orange
+{
+color:black;
+background-color:FF9933;
+border-bottom:black 2px solid;
+border-top:2px FF9933 solid;
 }
-.output {
-    grid-column: 1 / -1;
-    background-color: #ffe0f7;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 10px;
-    word-wrap: break-word;
-    word-break: break-all; 
+.gray:active
+{
+border-top:black 2px solid;
+border-bottom:2px #6f6f6f solid;
 }
-.output .previous-operand {
-    color: #3e206d;
-    font-size: 1.5em;
+.pink:active
+{
+border-top:black 2px solid;
+border-bottom:#ff4561 2px solid;
 }
-.output .current-operand {
-    color: #45046a;
-    font-size: 2.5em;
+.black:active
+{
+border-top:black 2px solid;
+border-bottom:#303030 2px solid;
+}
+.orange:active
+{
+border-top:black 2px solid;
+border-bottom:FF9933 2px solid;
+}
+p
+{
+line-height:10px;
 }
